@@ -46,25 +46,25 @@
         }
 
         [data-md-color-scheme="custom-light"] {
-            --color-bg: var(--grey-50);
+            --color-bg: #fafaf9;
             --color-surface: #ffffff;
-            --color-surface-secondary: var(--grey-100);
-            --color-text-primary: var(--grey-900);
-            --color-text-secondary: var(--grey-600);
-            --color-text-tertiary: var(--grey-400);
-            --color-border: var(--grey-200);
-            --color-border-strong: var(--grey-300);
+            --color-surface-secondary: #f5f5f4;
+            --color-text-primary: #1c1917;
+            --color-text-secondary: #57534e;
+            --color-text-tertiary: #a8a29e;
+            --color-border: #e7e5e4;
+            --color-border-strong: #d6d3d1;
         }
 
         [data-md-color-scheme="custom-dark"] {
-            --color-bg: var(--grey-950);
-            --color-surface: var(--grey-900);
-            --color-surface-secondary: var(--grey-800);
-            --color-text-primary: var(--grey-50);
-            --color-text-secondary: var(--grey-400);
-            --color-text-tertiary: var(--grey-600);
-            --color-border: var(--grey-800);
-            --color-border-strong: var(--grey-700);
+            --color-bg: #0f0f0f;
+            --color-surface: #1c1917;
+            --color-surface-secondary: #292524;
+            --color-text-primary: #fafaf9;
+            --color-text-secondary: #a8a29e;
+            --color-text-tertiary: #57534e;
+            --color-border: #292524;
+            --color-border-strong: #44403c;
         }
 
         * {
@@ -204,26 +204,6 @@
             transform: translateX(4px);
         }
 
-        /* Theme Toggle */
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: var(--color-surface-secondary);
-            border: 1px solid var(--color-border);
-            border-radius: var(--rounded);
-            padding: 8px 12px;
-            cursor: pointer;
-            color: var(--color-text-primary);
-            font-family: var(--md-text-font);
-            font-size: 14px;
-            transition: all 0.2s ease;
-        }
-
-        .theme-toggle:hover {
-            border-color: var(--color-border-strong);
-        }
-
         /* Responsive */
         @media (max-width: 1024px) {
             .container {
@@ -277,10 +257,6 @@
     </style>
 </head>
 <body>
-    <button class="theme-toggle" onclick="toggleTheme()">
-        <span id="theme-icon">☀️</span> Toggle Theme
-    </button>
-
     <div class="hero-section">
         <div class="hero-content">
             <h1>Mastering Polkadot</h1>
@@ -321,14 +297,5 @@
         </div>
     </div>
 
-    <script>
-        function toggleTheme() {
-            const html = document.documentElement;
-            const currentTheme = html.getAttribute('data-md-color-scheme');
-            const newTheme = currentTheme === 'custom-dark' ? 'custom-light' : 'custom-dark';
-            html.setAttribute('data-md-color-scheme', newTheme);
-            document.getElementById('theme-icon').textContent = newTheme === 'custom-dark' ? '☀️' : '🌙';
-        }
-    </script>
 </body>
 </html>
